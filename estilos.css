@@ -1,0 +1,160 @@
+/* Reinicio básico de espacios */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo general del sitio */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4ca4d;
+}
+
+/* Header = encabezado */
+.header {
+    background-color: #4e4035;
+    color: #ffebeb;
+    padding: 10px;
+    text-align: center;
+}
+
+/* display: flex ordena elementos en fila o columna */
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* separa elementos */
+    margin-bottom: 5px;
+}
+
+.logo img {
+    width: 135px;
+    height: auto;
+}
+
+/* Menú de navegación */
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+/* :hover cambia el estilo cuando el mouse pasa encima */
+.menu a:hover {
+    color: #f4ca4d;
+}
+
+/* Sección con efecto parallax */
+.parallax {
+    /* Agregar alguna imagen para el fondo */
+    background-image: url("imagen\ de\ fondo\ para\ comida\ rapida.jpg");
+    background-attachment: fixed; /* crea efecto parallax */
+    background-size: cover; /* la imagen cubre todo el espacio */
+    background-position: center;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fondo semitransparente para que el texto se vea mejor */
+.texto-parallax {
+    background-color: #ff3131(0, 0%, 0%, 0.5);
+    color: #fffb00;
+    padding: 222px;
+    text-align: center;
+    border-radius: 1px;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    gap: 20px;
+    padding: 135px;
+}
+
+/* Sección principal ocupa más espacio */
+.principal {
+    flex: 3;
+}
+
+/* Barra lateral ocupa menos espacio */
+.lateral {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background-color: #ffffff;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 20px;
+    transition: transform 0.4s; /* suaviza animaciones */
+}
+
+/* transform permite mover o escalar elementos */
+.tarjeta:hover {
+    transform: scale(1.07);
+}
+
+#producto-1 {
+    border-radius: 10px;
+    box-shadow: 2px 3px 2px #333333;
+}
+
+
+/* Pie de página */
+.footer {
+    background-color:#4e4035;
+    color: #f4ca4d;
+    padding: 20px;
+}
+
+/* flex para ordenar en columnas */
+.footer-contenido {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Permite que baje en pantallas pequeñas */
+    margin-bottom: 10px;
+}
+
+.footer-seccion {
+    max-width: 200px;
+}
+
+.footer-seccion h3 {
+    margin-bottom: 10px;
+}
+
+/* texto inferior */
+.copy {
+    text-align: center;
+    font-size: 14px;
+    background-color: #215886;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+/* Responsive:
+   Cuando la pantalla es pequeña, cambiamos el diseño.
+   max-width: 768px significa "aplica esto en pantallas de 768px o menos".
+*/
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column; /* ahora los elementos se apilan */
+    }
+
+    .menu a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .parallax {
+        background-attachment: scroll; /* evita problemas en algunos celulares */
+    }
+}
